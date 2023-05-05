@@ -1,0 +1,57 @@
+<div>
+  <div>
+    <h1>
+      Movie #<%= @the_movie.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/movies">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/movies/<%= @the_movie.id %>/edit">
+          Edit Movie
+        </a>
+      </div>
+
+      <div>
+        <a href="/movies/<%= @the_movie.id %>" data-method="delete">
+          Delete Movie
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Title
+      </dt>
+      <dd>
+        <%= @the_movie.title %>
+      </dd>
+
+      <dt>
+        Description
+      </dt>
+      <dd>
+        <%= @the_movie.description %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_movie.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_movie.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>

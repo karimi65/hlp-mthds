@@ -1,0 +1,67 @@
+<h1>
+  List of all movies
+</h1>
+
+<hr>
+
+<div>
+  <a href="/movies/new">Add a new movie</a>
+</div>
+
+<hr>
+
+<table>
+  <tr>
+    <th>
+      ID
+    </th>
+
+    <th>
+      Title
+    </th>
+
+    <th>
+      Description
+    </th>
+
+    <th>
+      Created at
+    </th>
+
+    <th>
+      Updated at
+    </th>
+
+    <th>
+    </th>
+  </tr>
+
+  <% @list_of_movies.each do |a_movie| %>
+  <tr>
+    <td>
+      <%= a_movie.id %>
+    </td>
+
+    <td>
+      <%= a_movie.title %>
+    </td>
+
+    <td>
+      <%= a_movie.description %>
+    </td>
+
+    <td>
+      <%= time_ago_in_words(a_movie.created_at) %> ago
+    </td>
+    <td>
+      <%= time_ago_in_words(a_movie.updated_at) %> ago
+    </td>
+
+    <td>
+      <a href="/movies/<%= a_movie.id %>">
+        Show details
+      </a>
+    </td>
+  </tr>
+  <% end %>
+</table>
